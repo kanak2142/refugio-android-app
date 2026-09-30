@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4EEE9"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingTop="22dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="Back"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="#66595A" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Refugio"
+                android:textColor="#4A3D40"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:gravity="center"
+            android:text="Quiet Moment"
+            android:textColor="#4A3D40"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:gravity="center"
+            android:text="Nothing needs your attention for a little while."
+            android:textColor="#806F6B"
+            android:textSize="15sp" />
+
+        <FrameLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="34dp">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressCircle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:indeterminate="false"
+                android:max="60"
+                android:progress="60"
+                app:indicatorColor="#8A7772"
+                app:indicatorSize="280dp"
+                app:trackColor="#DDD3D0"
+                app:trackThickness="8dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/quietCircle"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#E6D9DE"
+                app:cardCornerRadius="110dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#D9CBD1"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/moonIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🌙"
+                        android:textSize="32sp" />
+
+                    <TextView
+                        android:id="@+id/timerText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="60"
+                        android:textColor="#4A3D40"
+                        android:textSize="40sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="seconds"
+                        android:textColor="#806F6B"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/messageText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:text="Settle in."
+            android:textColor="#4A3D40"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subMessageText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:gravity="center"
+            android:text="You don't need to do anything right now."
+            android:textColor="#806F6B"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:gravity="center"
+            android:text="Soundscape"
+            android:textColor="#4A3D40"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="Choose a sound for your quiet moment"
+            android:textColor="#806F6B"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clockButton"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:text="🕰\nClock"
+                android:textColor="#4A3D40"
+                android:textSize="11sp"
+                app:backgroundTint="#E7DDD9"
+                app:cornerRadius="18dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/wavesButton"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:text="🌊\nWaves"
+                android:textColor="#4A3D40"
+                android:textSize="11sp"
+                app:backgroundTint="#E7DDD9"
+                app:cornerRadius="18dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/breezeButton"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:text="🏔\nBreeze"
+                android:textColor="#4A3D40"
+                android:textSize="11sp"
+                app:backgroundTint="#E7DDD9"
+                app:cornerRadius="18dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/silentButton"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:text="🤫\nSilent"
+                android:textColor="#4A3D40"
+                android:textSize="11sp"
+                app:backgroundTint="#E7DDD9"
+                app:cornerRadius="18dp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/startButton"
+            android:layout_width="240dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="24dp"
+            android:text="Begin quiet moment"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:backgroundTint="#806D68"
+            app:cornerRadius="26dp" />
+
+        <TextView
+            android:id="@+id/bottomText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="You can stop whenever you want."
+            android:textColor="#9A8984"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</ScrollView>

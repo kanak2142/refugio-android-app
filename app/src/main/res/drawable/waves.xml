@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="800dp"
+    android:viewportWidth="360"
+    android:viewportHeight="800">
+
+    <!-- TOP WAVE -->
+
+    <path
+        android:fillColor="#8CB5BA"
+        android:pathData="
+        M0,0
+        L210,0
+        C190,25 168,43 145,60
+        C112,84 87,110 60,137
+        C35,162 16,178 0,185
+        Z" />
+
+    <!-- TOP INNER WAVE -->
+
+    <path
+        android:fillColor="#A9C9CC"
+        android:pathData="
+        M0,0
+        L185,0
+        C162,25 139,44 116,61
+        C87,83 63,108 38,133
+        C22,149 10,160 0,166
+        Z" />
+
+    <!-- BOTTOM BACK WAVE -->
+
+    <path
+        android:fillColor="#91B8BC"
+        android:pathData="
+        M0,690
+        C45,662 88,667 128,689
+        C174,714 207,746 250,750
+        C295,754 330,727 360,700
+        L360,800
+        L0,800
+        Z" />
+
+    <!-- BOTTOM MIDDLE WAVE -->
+
+    <path
+        android:fillColor="#72A2A8"
+        android:pathData="
+        M0,735
+        C48,704 91,711 136,738
+        C181,765 218,779 259,763
+        C302,747 335,717 360,708
+        L360,800
+        L0,800
+        Z" />
+
+    <!-- BOTTOM FRONT WAVE -->
+
+    <path
+        android:fillColor="#5C9299"
+        android:pathData="
+        M0,775
+        C44,744 88,747 130,771
+        C177,798 217,801 260,783
+        C301,765 334,739 360,735
+        L360,800
+        L0,800
+        Z" />
+
+</vector>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F3EF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="22dp"
+        android:paddingTop="22dp"
+        android:paddingEnd="22dp"
+        android:paddingBottom="35dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="Back"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="#66595A" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Refugio"
+                android:textColor="#4A3D40"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:text="Today's Challenge"
+            android:textColor="#4A3D40"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="One small thing for yourself today."
+            android:textColor="#806F6B"
+            android:textSize="15sp" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/challengeCard"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:layout_marginTop="28dp"
+            app:cardBackgroundColor="#DDE6DF"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#CEDACF"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="28dp">
+
+                <TextView
+                    android:id="@+id/challengeEmoji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌿"
+                    android:textSize="38sp" />
+
+                <TextView
+                    android:id="@+id/challengeTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="Take a quiet pause"
+                    android:textColor="#4A3D40"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/challengeDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="Take five minutes away from your screen and simply sit somewhere comfortable."
+                    android:textColor="#66595A"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/xpText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="+10 XP"
+                    android:textColor="#806D68"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/completeButton"
+                    android:layout_width="220dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="22dp"
+                    android:text="Mark as complete"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    app:backgroundTint="#806D68"
+                    app:cornerRadius="24dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:text="Complete today's challenge to earn XP."
+            android:textColor="#8A7974"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+</ScrollView>

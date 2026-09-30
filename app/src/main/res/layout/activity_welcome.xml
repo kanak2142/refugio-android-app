@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/welcomeMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F7F2">
+
+    <!-- Refugio waves -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/waves"
+        android:scaleType="fitXY"
+        android:contentDescription="@null" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp">
+
+        <!-- App name -->
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="110dp"
+            android:text="Refugio"
+            android:textColor="#294653"
+            android:textSize="30sp"
+            android:fontFamily="sans-serif-condensed"
+            android:letterSpacing="0.01" />
+
+        <!-- Small glowing sparkle -->
+        <TextView
+            android:id="@+id/sparkle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:text="✦"
+            android:textColor="#5C9290"
+            android:textSize="28sp"
+            android:alpha="0.55" />
+
+        <!-- Welcome text -->
+        <TextView
+            android:id="@+id/welcomeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="Welcome to Refugio"
+            android:textColor="#294653"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/welcomeDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="A little space for yourself,&#10;whenever you need it."
+            android:textColor="#4D6C75"
+            android:textSize="16sp"
+            android:fontFamily="cursive"
+            android:textStyle="bold" />
+
+        <!-- Bottom message -->
+        <TextView
+            android:id="@+id/breatheText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="Take a breath. You're here. 🍃"
+            android:textColor="#52757D"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#B7C4BD"
+
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/breathMain"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="50dp">
+
+
+        <!-- ================================================= -->
+        <!-- TOP BAR                                           -->
+        <!-- ================================================= -->
+
+        <ImageView
+            android:id="@+id/backButton"
+
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+
+            android:layout_marginTop="20dp"
+
+            android:background="#A5B5AC"
+
+            android:contentDescription="Back"
+
+            android:padding="12dp"
+
+            android:src="@android:drawable/ic_media_previous"
+
+            android:tint="#243E46"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/appName"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="25dp"
+
+            android:text="Refugio"
+
+            android:textColor="#243E46"
+
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            android:fontFamily="sans-serif-condensed"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/menuButton"
+
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+
+            android:layout_marginTop="20dp"
+
+            android:background="#A5B5AC"
+
+            android:contentDescription="Menu"
+
+            android:padding="12dp"
+
+            android:src="@android:drawable/ic_menu_more"
+
+            android:tint="#243E46"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!-- ================================================= -->
+        <!-- INTRO                                             -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/greeting"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="42dp"
+
+            android:text="A little space&#10;for you."
+
+            android:textColor="#243E46"
+
+            android:textSize="38sp"
+
+            android:textStyle="bold"
+
+            android:fontFamily="sans-serif-condensed"
+
+            android:lineSpacingExtra="-2dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backButton" />
+
+
+        <TextView
+            android:id="@+id/breathSubtitle"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="13dp"
+
+            android:text="No pressure. No perfect rhythm.&#10;Just take a moment and breathe."
+
+            android:textColor="#465D5B"
+
+            android:textSize="15sp"
+
+            android:fontFamily="cursive"
+
+            android:textStyle="bold"
+
+            android:lineSpacingExtra="3dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/greeting" />
+
+
+        <!-- ================================================= -->
+        <!-- MAIN FEATURE / SANCTUARY                          -->
+        <!-- ================================================= -->
+
+        <com.google.android.material.card.MaterialCardView
+
+            android:id="@+id/featuredBreath"
+
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+
+            android:layout_marginTop="28dp"
+
+            android:clickable="true"
+            android:focusable="true"
+
+            app:cardBackgroundColor="#759995"
+            app:cardCornerRadius="34dp"
+            app:cardElevation="0dp"
+
+            app:strokeWidth="0dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/breathSubtitle">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <!-- FEATURE LABEL -->
+
+                <TextView
+                    android:id="@+id/featuredLabel"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+
+                    android:text="TODAY'S PAUSE"
+
+                    android:textColor="#DCE5DF"
+
+                    android:textSize="10sp"
+
+                    android:textStyle="bold"
+
+                    android:letterSpacing="0.18"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <!-- OUTER BREATHING CIRCLE -->
+
+                <com.google.android.material.card.MaterialCardView
+
+                    android:id="@+id/outerBreathCircle"
+
+                    android:layout_width="156dp"
+                    android:layout_height="156dp"
+
+                    app:cardBackgroundColor="#5D8580"
+
+                    app:cardCornerRadius="100dp"
+                    app:cardElevation="0dp"
+
+                    app:strokeColor="#6F918D"
+                    app:strokeWidth="2dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.76"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.42" />
+
+
+                <!-- INNER BREATHING CIRCLE -->
+
+                <com.google.android.material.card.MaterialCardView
+
+                    android:id="@+id/innerBreathCircle"
+
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+
+                    app:cardBackgroundColor="#D8D5C8"
+
+                    app:cardCornerRadius="100dp"
+                    app:cardElevation="0dp"
+
+                    app:strokeColor="#C5C8BA"
+                    app:strokeWidth="1dp"
+
+                    app:layout_constraintBottom_toBottomOf="@id/outerBreathCircle"
+                    app:layout_constraintEnd_toEndOf="@id/outerBreathCircle"
+                    app:layout_constraintStart_toStartOf="@id/outerBreathCircle"
+                    app:layout_constraintTop_toTopOf="@id/outerBreathCircle" />
+
+
+                <!-- CENTER TEXT -->
+
+                <TextView
+                    android:id="@+id/breatheLabel"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="BREATHE"
+
+                    android:textColor="#29464D"
+
+                    android:textSize="11sp"
+
+                    android:textStyle="bold"
+
+                    android:letterSpacing="0.18"
+
+                    app:layout_constraintBottom_toBottomOf="@id/innerBreathCircle"
+                    app:layout_constraintEnd_toEndOf="@id/innerBreathCircle"
+                    app:layout_constraintStart_toStartOf="@id/innerBreathCircle"
+                    app:layout_constraintTop_toTopOf="@id/innerBreathCircle" />
+
+
+                <!-- FEATURED TITLE -->
+
+                <TextView
+                    android:id="@+id/featuredTitle"
+
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="24dp"
+
+                    android:text="Box&#10;Breathing"
+
+                    android:textColor="#F0EDE3"
+
+                    android:textSize="27sp"
+
+                    android:textStyle="bold"
+
+                    android:fontFamily="sans-serif-condensed"
+
+                    android:lineSpacingExtra="-2dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.61" />
+
+
+                <TextView
+                    android:id="@+id/featuredPattern"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="7dp"
+
+                    android:text="4  ·  4  ·  4  ·  4"
+
+                    android:textColor="#DCE5DF"
+
+                    android:textSize="13sp"
+
+                    android:fontFamily="sans-serif-medium"
+
+                    app:layout_constraintStart_toStartOf="@id/featuredTitle"
+                    app:layout_constraintTop_toBottomOf="@id/featuredTitle" />
+
+
+                <TextView
+                    android:id="@+id/featuredAction"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="24dp"
+                    android:layout_marginBottom="23dp"
+
+                    android:text="Begin gently   →"
+
+                    android:textColor="#F0EDE3"
+
+                    android:textSize="13sp"
+
+                    android:textStyle="bold"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ================================================= -->
+        <!-- SECTION TITLE                                     -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/chooseTitle"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="34dp"
+
+            android:text="Find your rhythm"
+
+            android:textColor="#243E46"
+
+            android:textSize="23sp"
+
+            android:textStyle="bold"
+
+            android:fontFamily="sans-serif-condensed"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/featuredBreath" />
+
+
+        <TextView
+            android:id="@+id/chooseDescription"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="6dp"
+
+            android:text="Choose whatever feels right today."
+
+            android:textColor="#526765"
+
+            android:textSize="14sp"
+
+            android:fontFamily="cursive"
+
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chooseTitle" />
+
+
+        <!-- ================================================= -->
+        <!-- 4-7-8                                             -->
+        <!-- ================================================= -->
+
+        <com.google.android.material.card.MaterialCardView
+
+            android:id="@+id/breath478Row"
+
+            android:layout_width="0dp"
+            android:layout_height="76dp"
+
+            android:layout_marginTop="20dp"
+
+            android:clickable="true"
+            android:focusable="true"
+
+            app:cardBackgroundColor="#D8CBB8"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="0dp"
+
+            app:strokeColor="#C5B8A5"
+            app:strokeWidth="1dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chooseDescription">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+
+                <TextView
+                    android:id="@+id/breath478Number"
+
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+
+                    android:gravity="center"
+
+                    android:text="02"
+
+                    android:textColor="#655746"
+
+                    android:textSize="10sp"
+
+                    android:textStyle="bold"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/breath478Title"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="13dp"
+
+                    android:text="4–7–8 Breathing"
+
+                    android:textColor="#29464D"
+
+                    android:textSize="16sp"
+
+                    android:textStyle="bold"
+
+                    android:fontFamily="sans-serif-medium"
+
+                    app:layout_constraintEnd_toStartOf="@id/breath478Arrow"
+                    app:layout_constraintStart_toEndOf="@id/breath478Number"
+                    app:layout_constraintTop_toTopOf="@id/breath478Number" />
+
+
+                <TextView
+                    android:id="@+id/breath478Pattern"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="2dp"
+
+                    android:text="A slower rhythm"
+
+                    android:textColor="#5E6D69"
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintStart_toStartOf="@id/breath478Title"
+                    app:layout_constraintTop_toBottomOf="@id/breath478Title" />
+
+
+                <TextView
+                    android:id="@+id/breath478Arrow"
+
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+
+                    android:gravity="center"
+
+                    android:text="↗"
+
+                    android:textColor="#675947"
+
+                    android:textSize="19sp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ================================================= -->
+        <!-- CALM                                                -->
+        <!-- ================================================= -->
+
+        <com.google.android.material.card.MaterialCardView
+
+            android:id="@+id/calmBreathingRow"
+
+            android:layout_width="0dp"
+            android:layout_height="76dp"
+
+            android:layout_marginTop="10dp"
+
+            android:clickable="true"
+            android:focusable="true"
+
+            app:cardBackgroundColor="#B8C7BD"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="0dp"
+
+            app:strokeColor="#A5B7AB"
+            app:strokeWidth="1dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/breath478Row">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+
+                <TextView
+                    android:id="@+id/calmNumber"
+
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+
+                    android:gravity="center"
+
+                    android:text="03"
+
+                    android:textColor="#405B53"
+
+                    android:textSize="10sp"
+
+                    android:textStyle="bold"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/calmTitle"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="13dp"
+
+                    android:text="Calm Breathing"
+
+                    android:textColor="#29464D"
+
+                    android:textSize="16sp"
+
+                    android:textStyle="bold"
+
+                    android:fontFamily="sans-serif-medium"
+
+                    app:layout_constraintEnd_toStartOf="@id/calmArrow"
+                    app:layout_constraintStart_toEndOf="@id/calmNumber"
+                    app:layout_constraintTop_toTopOf="@id/calmNumber" />
+
+
+                <TextView
+                    android:id="@+id/calmPattern"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="2dp"
+
+                    android:text="An easy rhythm"
+
+                    android:textColor="#536762"
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintStart_toStartOf="@id/calmTitle"
+                    app:layout_constraintTop_toBottomOf="@id/calmTitle" />
+
+
+                <TextView
+                    android:id="@+id/calmArrow"
+
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+
+                    android:gravity="center"
+
+                    android:text="↗"
+
+                    android:textColor="#49645C"
+
+                    android:textSize="19sp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ================================================= -->
+        <!-- CUSTOM                                             -->
+        <!-- ================================================= -->
+
+        <com.google.android.material.card.MaterialCardView
+
+            android:id="@+id/customBreathingRow"
+
+            android:layout_width="0dp"
+            android:layout_height="76dp"
+
+            android:layout_marginTop="10dp"
+
+            android:clickable="true"
+            android:focusable="true"
+
+            app:cardBackgroundColor="#C3B9C7"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="0dp"
+
+            app:strokeColor="#AEA4B2"
+            app:strokeWidth="1dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calmBreathingRow">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+
+                <TextView
+                    android:id="@+id/customNumber"
+
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+
+                    android:gravity="center"
+
+                    android:text="04"
+
+                    android:textColor="#625568"
+
+                    android:textSize="10sp"
+
+                    android:textStyle="bold"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/customTitle"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="13dp"
+
+                    android:text="Create your own"
+
+                    android:textColor="#29464D"
+
+                    android:textSize="16sp"
+
+                    android:textStyle="bold"
+
+                    android:fontFamily="sans-serif-medium"
+
+                    app:layout_constraintEnd_toStartOf="@id/customArrow"
+                    app:layout_constraintStart_toEndOf="@id/customNumber"
+                    app:layout_constraintTop_toTopOf="@id/customNumber" />
+
+
+                <TextView
+                    android:id="@+id/customPattern"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="2dp"
+
+                    android:text="Your rhythm, your way"
+
+                    android:textColor="#62676A"
+
+                    android:textSize="12sp"
+
+                    app:layout_constraintStart_toStartOf="@id/customTitle"
+                    app:layout_constraintTop_toBottomOf="@id/customTitle" />
+
+
+                <TextView
+                    android:id="@+id/customArrow"
+
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+
+                    android:gravity="center"
+
+                    android:text="↗"
+
+                    android:textColor="#67596D"
+
+                    android:textSize="19sp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ================================================= -->
+        <!-- ENDING                                             -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/bottomMessage"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="34dp"
+
+            android:gravity="center"
+
+            android:text="You don't have to do anything perfectly.&#10;Just begin where you are. 🍃"
+
+            android:textColor="#4F6461"
+
+            android:textSize="14sp"
+
+            android:fontFamily="cursive"
+
+            android:textStyle="bold"
+
+            android:lineSpacingExtra="4dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/customBreathingRow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

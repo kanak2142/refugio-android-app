@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D5C9CE"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:tint="#52616A"
+            android:contentDescription="Back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refugio"
+            android:textColor="#294653"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="sans"
+            app:layout_constraintTop_toTopOf="@id/backButton"
+            app:layout_constraintBottom_toBottomOf="@id/backButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="4–7–8 Breathing"
+            android:textColor="#3D4F55"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            app:layout_constraintTop_toBottomOf="@id/backButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/subtitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="A slow breathing pattern for moments when you need to settle down."
+            android:textColor="#526765"
+            android:textSize="16sp"
+            android:lineSpacingExtra="3dp"
+            app:layout_constraintTop_toBottomOf="@id/titleText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/infoCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            app:cardBackgroundColor="#C2AFBA"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="0dp"
+            app:layout_constraintTop_toBottomOf="@id/subtitleText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="28dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="The rhythm"
+                    android:textColor="#3D4F55"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:text="Breathe in       4 seconds&#10;Hold                  7 seconds&#10;Breathe out    8 seconds&#10;Rest                  4 seconds"
+                    android:textColor="#4E5D62"
+                    android:textSize="17sp"
+                    android:lineSpacingExtra="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Follow the circle on the next screen and let the pace guide you."
+                    android:textColor="#526765"
+                    android:textSize="15sp"
+                    android:lineSpacingExtra="3dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/startButton"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="30dp"
+            android:text="Begin breathing    →"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#806779"
+            app:cornerRadius="29dp"
+            app:layout_constraintTop_toBottomOf="@id/infoCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/bottomMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:text="You don't have to rush. Just follow the rhythm."
+            android:textColor="#526765"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/startButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
