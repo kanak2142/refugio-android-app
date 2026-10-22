@@ -37,7 +37,7 @@ public class BreathActivity extends AppCompatActivity {
                     BreathActivity.this,
                     BreathingSessionActivity.class
             );
-
+//putting extra information in intent to be sent to the further activity
             intent.putExtra("patternName", "Box Breathing");
             intent.putExtra("inhale", 4);
             intent.putExtra("hold", 4);
@@ -102,7 +102,7 @@ public class BreathActivity extends AppCompatActivity {
                             insets.getInsets(
                                     WindowInsetsCompat.Type.systemBars()
                             );
-
+//used this to not hide or ui components through the system bars.
                     v.setPadding(
                             systemBars.left,
                             systemBars.top,

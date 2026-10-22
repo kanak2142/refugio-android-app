@@ -189,20 +189,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent" />
 
-                <!-- FLOWER PLACEHOLDER -->
-
-                <ImageView
-                    android:id="@+id/mandalaImage"
-                    android:layout_width="155dp"
-                    android:layout_height="155dp"
-                    android:scaleType="fitCenter"
-                    android:contentDescription="Breathing flower"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-
-                <!-- INSTRUCTION -->
 
                 <TextView
                     android:id="@+id/instructionText"
@@ -221,7 +207,7 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- TIMER -->
+
 
         <TextView
             android:id="@+id/timerText"

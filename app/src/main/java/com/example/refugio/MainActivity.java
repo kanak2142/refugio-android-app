@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,15 +15,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
-
 public class MainActivity extends AppCompatActivity {
 
-    private TextInputEditText nameInput;
-    private TextInputEditText emailInput;
-    private TextInputEditText passwordInput;
+    private EditText nameInput;
+    private EditText emailInput;
+    private EditText passwordInput;
 
+    // used to create and manage the database
     private MoodDatabaseHelper databaseHelper;
 
     @Override
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
 
-        MaterialButton createAccountButton =
+        Button createAccountButton =
                 findViewById(R.id.createAccountButton);
 
         TextView loginLink =
@@ -127,8 +127,7 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db =
                 databaseHelper.getWritableDatabase();
 
-        ContentValues values =
-                new ContentValues();
+        ContentValues values = new ContentValues(); //stores the column names and the data before entering
 
         values.put("name", name);
         values.put("email", email);
@@ -153,15 +152,6 @@ public class MainActivity extends AppCompatActivity {
 
             return;
         }
-
-        getSharedPreferences(
-                "RefugioData",
-                MODE_PRIVATE
-        )
-                .edit()
-                .putString("name", name)
-                .putString("email", email)
-                .apply();
 
         Toast.makeText(
                 this,

@@ -20,11 +20,6 @@ import java.util.Locale;
 
 public class BreathingSessionActivity extends AppCompatActivity
         implements TextToSpeech.OnInitListener {
-
-    // ---------------------------------------------------------
-    // UI
-    // ---------------------------------------------------------
-
     private TextView instructionText;
     private TextView timerText;
     private TextView cycleText;
@@ -35,43 +30,31 @@ public class BreathingSessionActivity extends AppCompatActivity
     private MaterialButton startButton;
     private MaterialButton pauseButton;
 
-    private CircularProgressIndicator breathProgress;
-    private ImageView mandalaImage;
+    private CircularProgressIndicator breathProgress; //progress indicator
 
     private TextView closingMessage;
 
 
-    // ---------------------------------------------------------
-    // SESSION
-    // ---------------------------------------------------------
 
     private final Handler handler =
             new Handler(Looper.getMainLooper());
 
     private static final int TOTAL_CYCLES = 4;
 
-    private int currentCycle = 1;
-    private int currentPhase = 0;
+    private int currentCycle = 1; //stores the current cycle
+    private int currentPhase = 0;//stores current breathing phase
 
-    private long phaseElapsed = 0;
+    private long phaseElapsed = 0;// stores the time passed in the current phase
 
     private boolean isRunning = false;
     private boolean isPaused = false;
 
-
-    // ---------------------------------------------------------
-    // BREATHING TIMES
-    // ---------------------------------------------------------
-
+    //stores duration of each phase
     private int inhaleTime = 4;
     private int holdTime = 4;
     private int exhaleTime = 4;
     private int restTime = 4;
 
-
-    // ---------------------------------------------------------
-    // PHASES
-    // ---------------------------------------------------------
 
     private final String[] phases = {
             "Breathe in",
@@ -81,9 +64,6 @@ public class BreathingSessionActivity extends AppCompatActivity
     };
 
 
-    // ---------------------------------------------------------
-    // TTS
-    // ---------------------------------------------------------
 
     private TextToSpeech textToSpeech;
 
@@ -91,25 +71,19 @@ public class BreathingSessionActivity extends AppCompatActivity
     private boolean ttsReady = false;
 
 
-    // ---------------------------------------------------------
-    // CALMING SOUND
-    // ---------------------------------------------------------
 
     private MediaPlayer calmingSound;
 
     private static final float CALMING_VOLUME = 0.35f;
 
 
-    // ---------------------------------------------------------
-    // PROGRESS
-    // ---------------------------------------------------------
-
-    private float displayedProgress = 0f;
 
 
-    // ---------------------------------------------------------
-    // TIMER
-    // ---------------------------------------------------------
+    private float displayedProgress = 0f; //stores the current progress displayed on the screen
+
+
+
+
 
     private final Runnable breathingRunnable = new Runnable() {
 
@@ -149,9 +123,7 @@ public class BreathingSessionActivity extends AppCompatActivity
     };
 
 
-    // =========================================================
-    // ON CREATE
-    // =========================================================
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,9 +135,7 @@ public class BreathingSessionActivity extends AppCompatActivity
         );
 
 
-        // -----------------------------------------------------
-        // CONNECT XML
-        // -----------------------------------------------------
+
 
         instructionText =
                 findViewById(R.id.instructionText);
@@ -191,16 +161,11 @@ public class BreathingSessionActivity extends AppCompatActivity
         breathProgress =
                 findViewById(R.id.breathProgress);
 
-        mandalaImage =
-                findViewById(R.id.mandalaImage);
-
         closingMessage =
                 findViewById(R.id.closingMessage);
 
 
-        // -----------------------------------------------------
-        // GET TIMINGS
-        // -----------------------------------------------------
+
 
         inhaleTime =
                 getIntent().getIntExtra(
@@ -227,9 +192,7 @@ public class BreathingSessionActivity extends AppCompatActivity
                 );
 
 
-        // -----------------------------------------------------
-        // PROGRESS
-        // -----------------------------------------------------
+
 
         breathProgress.setMax(100);
 
@@ -239,17 +202,7 @@ public class BreathingSessionActivity extends AppCompatActivity
         );
 
 
-        // -----------------------------------------------------
-        // FLOWER
-        // -----------------------------------------------------
 
-        mandalaImage.setScaleX(1.0f);
-        mandalaImage.setScaleY(1.0f);
-
-
-        // -----------------------------------------------------
-        // TTS
-        // -----------------------------------------------------
 
         textToSpeech =
                 new TextToSpeech(
@@ -258,16 +211,9 @@ public class BreathingSessionActivity extends AppCompatActivity
                 );
 
 
-        // -----------------------------------------------------
-        // MUSIC
-        // -----------------------------------------------------
 
         setupCalmingSound();
 
-
-        // -----------------------------------------------------
-        // INITIAL UI
-        // -----------------------------------------------------
 
         instructionText.setText("Ready");
 
@@ -288,27 +234,14 @@ public class BreathingSessionActivity extends AppCompatActivity
         voiceButton.setText("🔊");
 
 
-        // -----------------------------------------------------
-        // BACK
-        // -----------------------------------------------------
-
         backButton.setOnClickListener(v -> {
             finish();
         });
 
 
-        // -----------------------------------------------------
-        // VOICE
-        // -----------------------------------------------------
-
         voiceButton.setOnClickListener(v -> {
             toggleVoice();
         });
-
-
-        // -----------------------------------------------------
-        // START
-        // -----------------------------------------------------
 
         startButton.setOnClickListener(v -> {
 
@@ -317,11 +250,6 @@ public class BreathingSessionActivity extends AppCompatActivity
             }
 
         });
-
-
-        // -----------------------------------------------------
-        // PAUSE / RESUME
-        // -----------------------------------------------------
 
         pauseButton.setOnClickListener(v -> {
 
@@ -338,9 +266,6 @@ public class BreathingSessionActivity extends AppCompatActivity
     }
 
 
-    // =========================================================
-    // CURRENT PHASE DURATION
-    // =========================================================
 
     private long getCurrentPhaseDuration() {
 
@@ -362,10 +287,6 @@ public class BreathingSessionActivity extends AppCompatActivity
         }
     }
 
-
-    // =========================================================
-    // SETUP MUSIC
-    // =========================================================
 
     private void setupCalmingSound() {
 
@@ -420,9 +341,6 @@ public class BreathingSessionActivity extends AppCompatActivity
     }
 
 
-    // =========================================================
-    // TTS
-    // =========================================================
 
     @Override
     public void onInit(int status) {
@@ -455,9 +373,6 @@ public class BreathingSessionActivity extends AppCompatActivity
     }
 
 
-    // =========================================================
-    // START SESSION
-    // =========================================================
 
     private void startSession() {
 
@@ -515,8 +430,6 @@ public class BreathingSessionActivity extends AppCompatActivity
         startCalmingSound();
 
 
-        // FLOWER
-        animateFlowerForPhase();
 
 
         // VOICE
@@ -535,9 +448,7 @@ public class BreathingSessionActivity extends AppCompatActivity
     }
 
 
-    // =========================================================
-    // PAUSE
-    // =========================================================
+
 
     private void pauseSession() {
 
@@ -558,8 +469,6 @@ public class BreathingSessionActivity extends AppCompatActivity
         }
 
 
-        mandalaImage.animate().cancel();
-
 
         pauseButton.setText("Resume");
 
@@ -573,11 +482,6 @@ public class BreathingSessionActivity extends AppCompatActivity
             );
         }
     }
-
-
-    // =========================================================
-    // RESUME
-    // =========================================================
 
     private void resumeSession() {
 
@@ -596,7 +500,6 @@ public class BreathingSessionActivity extends AppCompatActivity
 
         startCalmingSound();
 
-        animateFlowerForPhase();
 
 
         handler.removeCallbacks(
@@ -739,8 +642,6 @@ public class BreathingSessionActivity extends AppCompatActivity
         );
 
 
-        animateFlowerForPhase();
-
         speakCurrentPhase();
 
 
@@ -751,76 +652,8 @@ public class BreathingSessionActivity extends AppCompatActivity
     }
 
 
-    // =========================================================
-    // FLOWER
-    // =========================================================
-
-    private void animateFlowerForPhase() {
-
-        mandalaImage.animate().cancel();
 
 
-        long remainingTime =
-                getCurrentPhaseDuration()
-                        - phaseElapsed;
-
-
-        if (remainingTime < 400) {
-            remainingTime = 400;
-        }
-
-
-        if (currentPhase == 0) {
-
-            mandalaImage.animate()
-                    .scaleX(1.16f)
-                    .scaleY(1.16f)
-                    .setDuration(
-                            remainingTime
-                    )
-                    .setInterpolator(
-                            new AccelerateDecelerateInterpolator()
-                    )
-                    .start();
-
-
-        } else if (currentPhase == 1) {
-
-            mandalaImage.animate()
-                    .scaleX(1.16f)
-                    .scaleY(1.16f)
-                    .setDuration(400)
-                    .start();
-
-
-        } else if (currentPhase == 2) {
-
-            mandalaImage.animate()
-                    .scaleX(0.90f)
-                    .scaleY(0.90f)
-                    .setDuration(
-                            remainingTime
-                    )
-                    .setInterpolator(
-                            new AccelerateDecelerateInterpolator()
-                    )
-                    .start();
-
-
-        } else {
-
-            mandalaImage.animate()
-                    .scaleX(0.90f)
-                    .scaleY(0.90f)
-                    .setDuration(400)
-                    .start();
-        }
-    }
-
-
-    // =========================================================
-    // VOICE
-    // =========================================================
 
     private void speakCurrentPhase() {
 
@@ -994,19 +827,6 @@ public class BreathingSessionActivity extends AppCompatActivity
         );
 
 
-        mandalaImage.animate().cancel();
-
-
-        mandalaImage.animate()
-                .scaleX(1.0f)
-                .scaleY(1.0f)
-                .setDuration(1200)
-                .setInterpolator(
-                        new AccelerateDecelerateInterpolator()
-                )
-                .start();
-
-
         closingMessage.setText(
                 "Well done. Take one final comfortable breath. 🍃"
         );
@@ -1102,11 +922,6 @@ public class BreathingSessionActivity extends AppCompatActivity
                 fadeRunnable
         );
     }
-
-
-    // =========================================================
-    // DESTROY
-    // =========================================================
 
     @Override
     protected void onDestroy() {

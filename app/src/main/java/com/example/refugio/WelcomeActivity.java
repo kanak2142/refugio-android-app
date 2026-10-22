@@ -49,8 +49,8 @@ public class WelcomeActivity extends AppCompatActivity {
             goToDashboard();
         });
 
-        // Open Dashboard automatically after 3 seconds
-        handler.postDelayed(openDashboard, 3000);
+
+
 
         // Handle system bars
         ViewCompat.setOnApplyWindowInsetsListener(

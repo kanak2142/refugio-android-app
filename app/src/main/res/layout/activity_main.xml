@@ -2,13 +2,10 @@
 
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F7F2">
-
-
 
     <ImageView
         android:layout_width="match_parent"
@@ -16,8 +13,6 @@
         android:src="@drawable/waves"
         android:scaleType="fitXY"
         android:contentDescription="@null" />
-
-
 
     <ScrollView
         android:id="@+id/mainScroll"
@@ -36,8 +31,6 @@
             android:paddingTop="48dp"
             android:paddingBottom="120dp">
 
-
-
             <TextView
                 android:id="@+id/appName"
                 android:layout_width="wrap_content"
@@ -48,33 +41,18 @@
                 android:textSize="30sp"
                 android:fontFamily="sans-serif-condensed"
                 android:letterSpacing="0.01"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp" />
 
-
-
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="~ A space to breathe ~"
-                    android:textColor="#4B6972"
-                    android:textSize="14sp"
-                    android:fontFamily="cursive"
-                    android:textStyle="bold"/>
-
-
-
-            </LinearLayout>
-
-
+                android:text="~ A space to breathe ~"
+                android:textColor="#4B6972"
+                android:textSize="14sp"
+                android:fontFamily="cursive"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/welcomeText"
@@ -97,8 +75,7 @@
                 android:textSize="16sp"
                 android:lineSpacingExtra="3dp"
                 android:fontFamily="cursive"
-                android:textStyle="bold"/>
-
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -109,32 +86,20 @@
                 android:textSize="15sp"
                 android:fontFamily="sans-serif-medium" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/nameLayout"
+            <EditText
+                android:id="@+id/nameInput"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:layout_marginTop="6dp"
                 android:hint="Enter your name"
-                app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopStart="18dp"
-                app:boxCornerRadiusTopEnd="18dp"
-                app:boxCornerRadiusBottomStart="18dp"
-                app:boxCornerRadiusBottomEnd="18dp"
-                app:boxStrokeColor="#A9BEC2"
-                app:hintTextColor="#617A82">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nameInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:inputType="textPersonName"
-                    android:textColor="#294653"
-                    android:textSize="15sp"
-                    android:fontFamily="sans-serif" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
+                android:inputType="textPersonName"
+                android:textColor="#294653"
+                android:textColorHint="#617A82"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:singleLine="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -145,32 +110,20 @@
                 android:textSize="15sp"
                 android:fontFamily="sans-serif-medium" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/emailLayout"
+            <EditText
+                android:id="@+id/emailInput"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:layout_marginTop="6dp"
                 android:hint="Enter your email"
-                app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopStart="18dp"
-                app:boxCornerRadiusTopEnd="18dp"
-                app:boxCornerRadiusBottomStart="18dp"
-                app:boxCornerRadiusBottomEnd="18dp"
-                app:boxStrokeColor="#A9BEC2"
-                app:hintTextColor="#617A82">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/emailInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:inputType="textEmailAddress"
-                    android:textColor="#294653"
-                    android:textSize="15sp"
-                    android:fontFamily="sans-serif" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- PASSWORD -->
+                android:inputType="textEmailAddress"
+                android:textColor="#294653"
+                android:textColorHint="#617A82"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:singleLine="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -181,35 +134,22 @@
                 android:textSize="15sp"
                 android:fontFamily="sans-serif-medium" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/passwordLayout"
+            <EditText
+                android:id="@+id/passwordInput"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
                 android:layout_marginTop="6dp"
                 android:hint="Create a password"
-                app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopStart="18dp"
-                app:boxCornerRadiusTopEnd="18dp"
-                app:boxCornerRadiusBottomStart="18dp"
-                app:boxCornerRadiusBottomEnd="18dp"
-                app:boxStrokeColor="#A9BEC2"
-                app:hintTextColor="#617A82"
-                app:endIconMode="password_toggle">
+                android:inputType="textPassword"
+                android:textColor="#294653"
+                android:textColorHint="#617A82"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:singleLine="true" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/passwordInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:inputType="textPassword"
-                    android:textColor="#294653"
-                    android:textSize="15sp"
-                    android:fontFamily="sans-serif" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- CREATE ACCOUNT BUTTON -->
-
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/createAccountButton"
                 android:layout_width="match_parent"
                 android:layout_height="57dp"
@@ -220,11 +160,8 @@
                 android:textStyle="bold"
                 android:textAllCaps="false"
                 android:fontFamily="sans-serif-medium"
-                app:backgroundTint="#5C9290"
-                app:cornerRadius="29dp"
+                android:backgroundTint="#5C9290"
                 android:elevation="2dp" />
-
-            <!-- LOGIN -->
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -253,7 +190,6 @@
                     android:padding="2dp" />
 
             </LinearLayout>
-
 
             <TextView
                 android:layout_width="wrap_content"
